@@ -26,20 +26,7 @@ const Form = () => {
 
   const determineCardType = (cardNumber) => {
     const cleanedCardNumber = cardNumber.replace(/ /g, "");
-    if (cleanedCardNumber.startsWith("4")) {
-      return (
-        cardNumber,
-        (
-          <img
-            className="w-[40px] m-[10px]"
-            src="https://res.cloudinary.com/dzfbm5ddp/image/upload/v1685044493/image_10_h9bjln.png"
-            alt="img"
-          />
-         
-        )
-        
-      );
-    } else if (cleanedCardNumber.startsWith("5")) {
+    if (cleanedCardNumber.startsWith("5")) {
       return (
         cardNumber,
         (
@@ -51,8 +38,8 @@ const Form = () => {
       
         )
       );
-    } else if (cleanedCardNumber.startsWith("")) {
-      return cardNumber;
+    // } else if (cleanedCardNumber.startsWith("") || cleanedCardNumber.startsWith("")) {
+    //   return cardNumber;
     } else {
       return "error";
     }
@@ -127,6 +114,15 @@ const Form = () => {
               {cardType}{" "}
             </p>
             )} */}
+
+             {cardType && (
+              <p className="absolute right-65" >
+          
+              {" "}
+              
+              {cardType}{" "}
+            </p>
+            )}
               <input
                 className="border border-400-blue bg-sky-50 rounded-[5px] w-full p-[16px] pl-[50px] my-[10px]"
                 type="number"
