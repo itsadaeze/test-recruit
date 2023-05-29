@@ -60,9 +60,7 @@ const Form = () => {
 
   const determineCardDate = (cardDate) => {
     const cleanedCardDate = cardDate.replace(/ /g, "");
-    if (cleanedCardDate.startsWith("0")) {
-      return cardDate;
-    } else if (cleanedCardNumber.startsWith("5")) {
+    if (cleanedCardDate.startsWith("2")) {
       return cardDate;
     } else {
       return "Unknown";
@@ -149,11 +147,21 @@ const Form = () => {
               </small>
               <br />
             </div>
-            <input
-              className="border border-400-blue w-full  bg-sky-50 rounded-[5px] p-[16px] mb-[10px] md:w-1/2"
-              type="number"
-             
-            />
+            <div className="relative flex items-center justify-between md:w-1/2">
+              <input
+                className="border border-400-blue w-full rounded-[5px] p-[16px] mb-[10px] "
+                type="number"
+                // id="cardNumber"
+                // value={cardDate}
+                // onChange={handleCardDateChange}
+              />
+              <div className="absolute left-60 mt-[-10px] mr-[10px]">
+                <CgMenuGridR
+                  size={30}
+                  className="text-gray-300 cursor-pointer"
+                />
+              </div>
+            </div>
           </div>
           <div className="block md:flex items-center lg:mb-8 ">
             <div className="md:w-1/2">
@@ -168,7 +176,7 @@ const Form = () => {
             </div>
             <input
               className="border border-400-blue w-full  bg-sky-50 rounded-[5px] p-[16px] mb-[10px] md:w-1/2"
-              type="date"
+              type="month"
               id="cardNumber"
               value={cardDate}
               onChange={handleCardDateChange}
@@ -193,7 +201,7 @@ const Form = () => {
                 // value={cardDate}
                 // onChange={handleCardDateChange}
               />
-              <div className="absolute left-60">
+              <div className="absolute left-60 ">
                 <CgMenuGridR
                   size={30}
                   className="text-gray-300 cursor-pointer"
